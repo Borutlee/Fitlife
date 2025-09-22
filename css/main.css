@@ -1,0 +1,140 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* component */
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+/* header start */
+.header {
+    width: 100%;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .container .logo {
+    position: relative;
+    transition: 0.4s;
+}
+
+.header .container .logo a {
+    font-weight: bold;
+    font-size: 30px;
+    font-style: italic;
+    transition-delay: 0.1s;
+    padding: 15px 10px 15px 4px;
+}
+
+.header .container .logo::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    background-color: black;
+    width: 0;
+    transition: 0.4s;
+    z-index: -1;
+    transform: skew(-15deg);
+}
+
+.header .container .logo:hover a {
+    color: white;
+}
+
+.header .container .logo:hover::before {
+    width: 100%;
+}
+
+.header .container .nav ul {
+    display: flex;
+}
+
+.header .container .nav ul li {
+    position: relative;
+    text-align: center;
+}
+
+.header .container .nav ul li a {
+    padding: 20px;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    transition: 0.5s;
+    align-items: center;
+}
+
+.header .container .nav ul li a i {
+    position: absolute;
+    transition: 0.5s;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.header .container .nav ul li a span {
+    font-weight: bold;
+    font-size: 17px;
+    /* position: absolute; */
+    opacity: 0;
+    transition: 0.5s;
+}
+.header .container .nav ul li:hover a i {
+    transform: translateX(-50px) rotate(360deg);
+    border-radius: 50%;
+    border: 1px solid black;
+}
+.header .container .nav ul li:hover a span {
+    opacity: 1;
+}
