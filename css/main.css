@@ -55,7 +55,9 @@ a {
 
 /* header start */
 .header {
+    padding-top: 10px;
     width: 100%;
+    box-shadow: 0px 3px 3px #d6d6d6;
 }
 
 .header .container {
@@ -106,7 +108,7 @@ a {
 }
 
 .header .container .nav ul li a {
-    padding: 20px;
+    padding: 25px;
     font-size: 20px;
     text-align: center;
     font-weight: bold;
@@ -130,11 +132,105 @@ a {
     opacity: 0;
     transition: 0.5s;
 }
+
 .header .container .nav ul li:hover a i {
     transform: translateX(-50px) rotate(360deg);
     border-radius: 50%;
-    border: 1px solid black;
+    box-shadow: 0px 2px 3px black;
 }
+
 .header .container .nav ul li:hover a span {
     opacity: 1;
+}
+
+.header .container .nav ul li:hover a .fa-house {
+    transform: translateX(-42px) rotate(360deg);
+}
+
+.header .container .nav ul li:hover a .fa-weight-scale {
+    transform: translateX(-30px) rotate(360deg);
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+    .header .container .logo a {
+        font-size: 24px;
+        padding: 10px;
+    }
+
+    .header .container .nav ul li a {
+        font-size: 18px;
+        padding: 15px;
+    }
+}
+
+/* Mobiles landscape */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+    }
+
+    .header .container .nav ul {
+        margin-top: 10px;
+    }
+}
+
+/* Small mobiles */
+@media (max-width: 576px) {
+    .header .container .nav ul {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .header .container .nav ul li {
+        width: 100%;
+    }
+
+    .header .container .nav ul li a {
+        font-size: 16px;
+        padding: 8px;
+    }
+    .header .container .nav ul li a i{
+        display: none;
+    }
+    .header .container .nav ul li a span{
+        opacity: 1;
+    }
+}
+
+@media (max-width: 300px) {
+
+    .header .container {
+        flex-direction: column; /* Stacks the logo and nav vertically */
+        align-items: center; /* Centers the items horizontally */
+    }
+
+    .header .container .logo {
+        margin-bottom: 20px; /* Adds space between the logo and navigation */
+    }
+
+    .header .container .nav ul {
+        flex-direction: column; /* Stacks the navigation links vertically */
+        width: 100%;
+        text-align: center;
+    }
+
+    .header .container .nav ul li a {
+        padding: 10px; /* Reduces padding for smaller links */
+        justify-content: center;
+    }
+
+    /* Resets the hover effects for smaller screens */
+    .header .container .nav ul li:hover a i,
+    .header .container .nav ul li a i {
+        transform: none; /* Removes the sliding icon effect */
+        opacity: 1; /* Makes the icon visible */
+        position: static; /* Positions the icon normally in the flow */
+    }
+
+    .header .container .nav ul li a span {
+        opacity: 1; /* Always shows the text */
+        position: static; /* Positions the text normally */
+    }
+
 }
