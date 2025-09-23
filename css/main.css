@@ -12,6 +12,12 @@ html {
 
 body {
     font-family: 'Roboto Condensed', 'El Messiri';
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 ul {
@@ -204,45 +210,34 @@ a {
 
     .header .container {
         flex-direction: column;
-        /* Stacks the logo and nav vertically */
         align-items: center;
-        /* Centers the items horizontally */
     }
 
     .header .container .logo {
         margin-bottom: 20px;
-        /* Adds space between the logo and navigation */
     }
 
     .header .container .nav ul {
         flex-direction: column;
-        /* Stacks the navigation links vertically */
         width: 100%;
         text-align: center;
     }
 
     .header .container .nav ul li a {
         padding: 10px;
-        /* Reduces padding for smaller links */
         justify-content: center;
     }
 
-    /* Resets the hover effects for smaller screens */
     .header .container .nav ul li:hover a i,
     .header .container .nav ul li a i {
         transform: none;
-        /* Removes the sliding icon effect */
         opacity: 1;
-        /* Makes the icon visible */
         position: static;
-        /* Positions the icon normally in the flow */
     }
 
     .header .container .nav ul li a span {
         opacity: 1;
-        /* Always shows the text */
         position: static;
-        /* Positions the text normally */
     }
 
 }
@@ -251,9 +246,10 @@ a {
 .landing .container {
     background-image: url(../imgs/young-fitness-man-studio.jpg);
     background-size: cover;
-    min-height: 88.5vh;
+    min-height: 100vh;
     position: relative;
     width: 100%;
+    /* animation: change-background 15s linear infinite; */
 }
 
 .landing .container::before {
@@ -288,13 +284,13 @@ a {
 .landing .container .btn {
     position: absolute;
     left: 50%;
-    bottom: 50px;
+    bottom: 100px;
 }
 
 .landing .container .btn a i {
     color: yellow;
     font-size: 30px;
-    animation: bouncing 1.5s infinite;
+    /* animation: bouncing 1.5s infinite; */
 }
 
 @keyframes bouncing {
@@ -358,6 +354,10 @@ a {
     .landing .container .btn a i {
         font-size: 24px;
     }
+
+    .landing .container {
+        animation: none;
+    }
 }
 
 /* Very small screens */
@@ -369,6 +369,11 @@ a {
     .landing .container .text p {
         font-size: 12px;
     }
+
+    .landing .container {
+        animation: none;
+    }
+
 }
 
 @media (min-width: 993px) {
@@ -380,4 +385,180 @@ a {
         font-size: 18px;
     }
 }
+
+@media (max-width: 768px) {
+    .landing .container {
+        min-height: 100vh;
+        /* تغطي الشاشة كاملة على الموبايل */
+    }
+}
+
+
+@keyframes change-background {
+
+    0%,
+    100% {
+        background-image: url("../imgs/young-fitness-man-studio.jpg");
+    }
+
+    50% {
+        background-image: url("../imgs/flat-lay-salad-with-chicken-sesame-seeds.jpg");
+    }
+
+    80% {
+        background-image: url("../imgs/low-angle-view-unrecognizable-muscular-build-man-preparing-lifting-barbell-health-club.jpg");
+    }
+}
+
 /* landing end */
+/* benefits start */
+
+.benefits {
+    margin-top: 100px;
+}
+
+.benefits .heading {
+    text-align: center;
+    font-size: 30px;
+    position: relative;
+}
+
+.benefits .heading::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    height: 10px;
+    width: 30%;
+    background-color: yellow;
+    transform: translateX(-50%) translateY(50px);
+    transition: 0.5s;
+}
+
+.benefits .heading::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    height: 10px;
+    width: 20%;
+    background-color: yellow;
+    transform: translateX(-50%) translateY(80px);
+    transition: 0.5s;
+}
+
+.benefits .heading:hover::before {
+    width: 40%;
+}
+
+.benefits .heading:hover::after {
+    width: 30%;
+}
+
+.benefits .container {
+    padding-top: 190px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    margin-bottom: 150px;
+    perspective: 600px;
+    margin-right: 20px;
+}
+
+.benefits .container .card {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 230px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+.benefits .container .card:hover {
+    transform: rotateY(-180deg) scale(1.1);
+    z-index: 2;
+}
+
+.benefits .container .card:not(:hover) {
+    transform: scale(0.9);
+    transition: transform 0.5s ease-in-out;
+}
+
+.benefits .container .card .face {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 10px 10px #777;
+}
+
+.benefits .container .card .front {
+    border-radius: 20px;
+    background-color: black;
+    color: yellow;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.benefits .container .card .back {
+    border-radius: 20px;
+    background-color: yellow;
+    transform: rotateY(180deg);
+    color: black;
+    line-height: 1.8;
+    font-size: 25px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.benefits .container .card:hover .back {
+    transform: rotateY(180deg) scale(1.05);
+}
+
+.benefits .container .card .face i {
+    width: 100%;
+    font-size: 60px;
+}
+
+@media (max-width: 767px) {
+    .benefits .container {
+        padding-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .benefits .container .card {
+        width: 280px;
+        height: 350px;
+        margin-bottom: 30px;
+    }
+
+    .benefits .container .card .face {
+        width: 100%;
+        height: 100%;
+    }
+
+    .benefits .container .card .face i {
+        font-size: 50px;
+    }
+
+    .benefits .container .card .front {
+        font-size: 25px;
+    }
+
+    .benefits .container .card .back {
+        font-size: 20px;
+        line-height: 1.5;
+    }
+}
+
+/* benefits end */
