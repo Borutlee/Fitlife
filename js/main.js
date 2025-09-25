@@ -6,7 +6,11 @@ let image = document.getElementsByClassName('image')[0];
 let nutritionIntroText = document.querySelector('.nutrition .intro .text');
 
 let rate = document.querySelector('.rate');
-let progressbar = document.querySelectorAll('.progress-bar span')
+let progressbar = document.querySelectorAll('.progress-bar')
+
+let tips = document.querySelector('.tips');
+let tipsboxes = document.querySelectorAll('.tips-content .box');
+
 
 
 window.addEventListener("scroll", function () {
@@ -26,6 +30,12 @@ window.addEventListener("scroll", function () {
     if (window.scrollY >= rate.offsetTop - 200) {
         progressbar.forEach(span => {
             span.style.width = span.dataset.width + "%";
+        });
+    }
+    if (window.scrollY >= rate.offsetTop - 200) {
+        tipsboxes.forEach(box => {
+            box.style.opacity = '1';
+            box.style.transform = 'translateX(0)';                
         });
     }
 });

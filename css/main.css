@@ -482,7 +482,6 @@ a {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     margin-bottom: 150px;
     perspective: 600px;
-    margin-right: 20px;
     opacity: 0;
     transform: translateY(20px);
 }
@@ -736,6 +735,10 @@ a {
 }
 /* boxes end */
 
+/* rate start */
+.rate {
+    margin : 90px;
+}
 .rate .rate-content{
     display:flex;
     justify-content: space-between;
@@ -759,14 +762,62 @@ a {
     font-weight: bold;
     position: relative;
 }
+.rate .rate-content .progress .progress-content span{
+    z-index: 1;
+}
 .rate .rate-content .progress .progress-content .progress-bar{
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     background-color: yellow;
-    border-radius: 0px 10px 0px 0px;
+    border-radius: 0px 20px 20px 0px;
+    transition: 0.5s;
 }
 .rate .rate-content .image img{
     width:400px;
 }
+@media (max-width: 769px){
+    .rate .rate-content .image img{
+        display:none;
+    }
+}
+/* rate end */
+/* tips start */
+.tips{
+    margin-top : 90px;
+}
+.tips .tips-content{
+    display:grid;
+    grid-template-columns: repeat(auto-fill , minmax(250px , 1fr));
+    gap: 30px;
+    margin-top: 70px;
+    padding-bottom: 50px;
+}
+.tips .tips-content .box{
+    text-align: center;
+    width: 100%;
+    background-color: white;
+    padding: 30px;
+    transition:0.5s;
+    cursor:pointer;
+    border-radius: 20px;
+    box-shadow: 0px 10px 10px #777;
+    transform: translateY(40px);
+    opacity: 0;
+}
+.tips .tips-content .box:hover{
+    background-color: yellow;
+}
+.tips .tips-content .box i {
+    font-size: 35px;
+    padding-bottom: 20px;
+}
+.tips .tips-content .box h4{
+    font-size: 25px;
+    padding-bottom: 20px;
+}
+.tips .tips-content .box p{
+    font-size: 20px;
+}
+/* tips end */
