@@ -113,6 +113,7 @@ a {
 
 .title p {
     font-size: 28px;
+    line-height: 1.8;
 }
 
 /* component end */
@@ -585,10 +586,13 @@ a {
 }
 
 /* benefits end */
+
+/* nutrition start */
 .nutrition {
     margin-top: 200px;
     background-color: var(--background-color);
     padding-top: 50px;
+    padding-bottom: 70px;
 }
 
 
@@ -645,7 +649,7 @@ a {
     margin-bottom: 70px;
 }
 
-.nutrition .container .boxes .box{
+.nutrition .container .boxes .box {
     text-align: center;
     max-width: 90%;
     display: flex;
@@ -655,12 +659,12 @@ a {
     border-radius: 20px;
     border: 4px solid black;
     padding: 20px;
-    background-color:white;
+    background-color: white;
 }
 
-.nutrition .container .boxes .box .icon{
+.nutrition .container .boxes .box .icon {
     position: relative;
-    width:fit-content;
+    width: fit-content;
     border-radius: 50%;
     background-color: black;
     padding: 16px;
@@ -670,29 +674,32 @@ a {
     justify-content: center;
     margin-bottom: 30px;
 }
-.nutrition .container .boxes .box .icon i{
-    color:yellow;
+
+.nutrition .container .boxes .box .icon i {
+    color: yellow;
     position: relative;
-    width:100%;
+    width: 100%;
     height: 100%;
     font-size: 30px;
 }
 
-.nutrition .container .boxes .box .box-title h4{
+.nutrition .container .boxes .box .box-title h4 {
     font-size: 25px;
     padding-bottom: 20px;
 }
-.nutrition .container .boxes .box .box-title p{
+
+.nutrition .container .boxes .box .box-title p {
     padding-bottom: 20px;
 }
 
-.nutrition .container .boxes .box .content{
+.nutrition .container .boxes .box .content {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
     justify-content: center;
 }
-.nutrition .container .boxes .box .content .content-box{
+
+.nutrition .container .boxes .box .content .content-box {
     background-color: #eee;
     display: flex;
     justify-content: space-between;
@@ -700,57 +707,65 @@ a {
     padding: 15px 10px;
     position: relative;
 }
-.nutrition .container .boxes .box .content .content-box::before{
+
+.nutrition .container .boxes .box .content .content-box::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
-    width:0%;
+    width: 0%;
     background-color: yellow;
     transition: 0.5s;
     /* z-index: -1; */
 }
-.nutrition .container .boxes .box .content .content-box:hover::before{
+
+.nutrition .container .boxes .box .content .content-box:hover::before {
     width: 100%;
 }
 
-.nutrition .container .boxes .box .content .content-box span{
+.nutrition .container .boxes .box .content .content-box span {
     z-index: 1;
     font-weight: bold;
 }
 
-.nutrition .container .boxes .box .content .content-box i{
+.nutrition .container .boxes .box .content .content-box i {
     z-index: 1;
     transition: 0.3s;
     font-weight: bold;
 }
-.nutrition .container .boxes .box .content .content-box:hover i{
-    color:green;
+
+.nutrition .container .boxes .box .content .content-box:hover i {
+    color: green;
 }
-@media (max-width: 769px){
+
+@media (max-width: 769px) {
     .nutrition .container .intro .image {
-        display:none;
+        display: none;
     }
 }
+
 /* boxes end */
 
 /* rate start */
 .rate {
-    margin : 90px;
+    margin: 90px;
 }
-.rate .rate-content{
-    display:flex;
+
+.rate .rate-content {
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    
+
 }
-.rate .rate-content .progress{
-    display:flex;
+
+.rate .rate-content .progress {
+    display: flex;
     flex-wrap: wrap;
     gap: 60px;
 }
-.rate .rate-content .progress .progress-content{
+
+.rate .rate-content .progress .progress-content {
     width: 100%;
     display: flex;
     flex-direction: row-reverse;
@@ -762,10 +777,12 @@ a {
     font-weight: bold;
     position: relative;
 }
-.rate .rate-content .progress .progress-content span{
+
+.rate .rate-content .progress .progress-content span {
     z-index: 1;
 }
-.rate .rate-content .progress .progress-content .progress-bar{
+
+.rate .rate-content .progress .progress-content .progress-bar {
     position: absolute;
     top: 0;
     left: 0;
@@ -774,50 +791,131 @@ a {
     border-radius: 0px 20px 20px 0px;
     transition: 0.5s;
 }
-.rate .rate-content .image img{
-    width:400px;
+
+.rate .rate-content .image img {
+    width: 400px;
 }
-@media (max-width: 769px){
-    .rate .rate-content .image img{
-        display:none;
+
+@media (max-width: 769px) {
+    .rate .rate-content .image img {
+        display: none;
     }
 }
+
 /* rate end */
 /* tips start */
-.tips{
-    margin-top : 90px;
+.tips {
+    margin-top: 90px;
 }
-.tips .tips-content{
-    display:grid;
-    grid-template-columns: repeat(auto-fill , minmax(250px , 1fr));
+
+.tips .tips-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 30px;
     margin-top: 70px;
     padding-bottom: 50px;
 }
-.tips .tips-content .box{
+
+.tips .tips-content .box {
     text-align: center;
     width: 100%;
     background-color: white;
     padding: 30px;
-    transition:0.5s;
-    cursor:pointer;
+    transition: 0.5s;
+    cursor: pointer;
     border-radius: 20px;
     box-shadow: 0px 10px 10px #777;
     transform: translateY(40px);
     opacity: 0;
 }
-.tips .tips-content .box:hover{
+
+.tips .tips-content .box:hover {
     background-color: yellow;
 }
+
 .tips .tips-content .box i {
     font-size: 35px;
     padding-bottom: 20px;
 }
-.tips .tips-content .box h4{
+
+.tips .tips-content .box h4 {
     font-size: 25px;
     padding-bottom: 20px;
 }
-.tips .tips-content .box p{
+
+.tips .tips-content .box p {
     font-size: 20px;
 }
+
 /* tips end */
+/* nutrition end */
+
+/* workout start */
+.workout {
+    padding-bottom: 100px;
+}
+
+.workout .container {
+    padding-top: 100px;
+}
+
+.workout .container .intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.workout .intro .text {
+    text-align: right;
+    max-width: 100%;
+}
+
+.workout .intro .text h1 {
+    font-size: 45px;
+}
+
+.workout .intro .text p {
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+.workout .container .workout-content .workout-types {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 25px;
+    background-color: #d6d6d6;
+    width: fit-content;
+    margin: 50px auto;
+    border-radius: 10px;
+    position: relative;
+}
+
+.workout .container .workout-content .workout-types .btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.5s;
+    z-index: 1;
+}
+
+.workout .container .workout-content .workout-types .active-bg {
+    position: absolute;
+    height: 100%;
+    background-color: yellow;
+    border-radius: 10px;
+    transition: left 0.5s ease-in-out, width 0.5s ease-in-out;
+}
+
+.workout .container .workout-content .workout-types .btn .text,
+.workout .container .workout-content .workout-types .btn i {
+    z-index: 0;
+}
+
+/* workout end */
