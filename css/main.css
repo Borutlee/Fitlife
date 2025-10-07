@@ -918,4 +918,53 @@ a {
     z-index: 0;
 }
 
+.info {
+    text-align: center;
+}
+
+.info .info-text {
+    width: 80%;
+    margin: auto;
+    padding-top: 15px;
+    line-height: 1.8;
+    font-size: 20px;
+    padding-bottom: 30px;
+}
+
+/* cards start */
+.workout-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.workout-cards .card {
+    border-radius: 20px;
+    box-shadow: 0px 10px 10px #777;
+    position: relative;
+}
+
+.workout-cards .card .image img {
+    max-width: 100%;
+    height: 240px;
+    width: 360px;
+}
+
+.workout-cards .card .body h3 {
+    padding: 10px 10px 20px;
+    font-size: 20px;
+    border-bottom: 2px solid #d6d6d6;
+}
+
+.workout-cards .card .body p {
+    padding: 20px 10px 20px;
+    direction: rtl;
+    font-size: 18px;
+}
+
+.workout-cards .card .footer {
+    padding: 16px;
+    border-top: 2px solid #d5d6d6;
+}
+/* cards end */
 /* workout end */
