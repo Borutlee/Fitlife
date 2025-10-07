@@ -24,6 +24,10 @@ let cardhead = document.querySelectorAll('.body h3');
 let cardparagraph = document.querySelectorAll('.body p');
 let time = document.querySelectorAll('.card .footer .time');
 
+let workout = document.querySelector('.workout');
+let workouttext = document.querySelector('.workout .intro .text');
+let workoutimage = document.querySelector('.workout .intro .image');
+
 window.addEventListener("scroll", function () {
     if (window.scrollY >= benefits.offsetTop - 200) {
         container.style.transition = 'opacity 0.5s ease-in, transform 0.5s ease-in';
@@ -49,12 +53,18 @@ window.addEventListener("scroll", function () {
             box.style.transform = 'translateX(0)';
         });
     }
+    if (window.scrollY >= workout.offsetTop - 200) {
+        workoutimage.style.transition = 'opacity 0.5s ease-in, transform 0.5s ease-in';
+        workoutimage.style.opacity = '1';
+        workoutimage.style.transform = 'translateX(0)';
+
+        workouttext.style.transition = 'opacity 0.5s ease-in, transform 0.5s ease-in';
+        workouttext.style.opacity = '1';
+        workouttext.style.transform = 'translateX(0)';
+    }
 });
 
 function switchbtn() {
-    // ----------------------------------------------------------------
-    // 💡 الأجزاء اللي تم نقلها لوضعها في المكان الصحيح (تشتغل مرة واحدة)
-    // 1. تعريف كائن البيانات كاملاً
     const workoutsInfo = {
         'الكارديو': {
             head: "تمارين الكارديو (تمارين القلب)",
