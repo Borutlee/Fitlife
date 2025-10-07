@@ -959,12 +959,20 @@ a {
 .workout-cards .card .body p {
     padding: 20px 10px 20px;
     direction: rtl;
-    font-size: 18px;
+    font-size: 20px;
+    display: flex;
+    height: 165px;
+    align-items: center;
 }
 
 .workout-cards .card .footer {
     padding: 16px;
     border-top: 2px solid #d5d6d6;
+}
+.workout-cards .card .footer .time{
+    margin-left: 15px;
+    font-weight: bold;
+    font-size: 18px;
 }
 /* cards end */
 /* workout end */
