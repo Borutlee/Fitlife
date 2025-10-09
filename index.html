@@ -22,6 +22,10 @@
     <!-- خط Roboto Condensed -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+        <!-- toastify js library -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
 </head>
 
 <body>
@@ -298,6 +302,7 @@
         </div>
     </div>
     <!-- nutrition end -->
+    <!-- workout start -->
     <div class="workout">
         <div class="heading">
             <h1>التمارين الرياضية</h1>
@@ -358,7 +363,8 @@
                         </div>
                         <div class="body">
                             <h3>الجري (Running)</h3>
-                            <p>تمرين أساسي وفعال جدًا لحرق السعرات الحرارية وتقوية القلب والرئتين. يمكنك ممارسته في الهواء الطلق أو على جهاز المشي (treadmill).</p>
+                            <p>تمرين أساسي وفعال جدًا لحرق السعرات الحرارية وتقوية القلب والرئتين. يمكنك ممارسته في
+                                الهواء الطلق أو على جهاز المشي (treadmill).</p>
                         </div>
                         <div class="footer">
                             <i class="fa-solid fa-clock"></i>
@@ -371,7 +377,8 @@
                         </div>
                         <div class="body">
                             <h3>ركوب الدراجة (cycling)</h3>
-                            <p>تمرين منخفض التأثير على المفاصل، وممتاز لتقوية عضلات الساقين وزيادة قدرة التحمل. يمكن ممارسته بالخارج أو على دراجة ثابتة (stationary bike) في الجيم</p>
+                            <p>تمرين منخفض التأثير على المفاصل، وممتاز لتقوية عضلات الساقين وزيادة قدرة التحمل. يمكن
+                                ممارسته بالخارج أو على دراجة ثابتة (stationary bike) في الجيم</p>
                         </div>
                         <div class="footer">
                             <i class="fa-solid fa-clock"></i>
@@ -384,7 +391,8 @@
                         </div>
                         <div class="body">
                             <h3>السباحة (Swimming)</h3>
-                            <p>تمرين لكامل الجسم، حيث يعمل على تقوية جميع العضلات الرئيسية دون إجهاد المفاصل. تُعد السباحة خيارًا ممتازًا لزيادة اللياقة البدنية والتحمل</p>
+                            <p>تمرين لكامل الجسم، حيث يعمل على تقوية جميع العضلات الرئيسية دون إجهاد المفاصل. تُعد
+                                السباحة خيارًا ممتازًا لزيادة اللياقة البدنية والتحمل</p>
                         </div>
                         <div class="footer">
                             <i class="fa-solid fa-clock"></i>
@@ -395,7 +403,93 @@
             </div>
         </div>
     </div>
-    <script src="js/main.js"></script>
+    <!-- workout end -->
+    <!-- bmi start -->
+    <div class="bmi-section">
+        <div class="heading">
+            <h1>حساب مؤشر كتلة الجسم</h1>
+        </div>
+        <div class="container">
+            <p></p>
+            <div class="bmi-calculator-container">
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label for="height">
+                            الطول (سنتميتر)
+                            <span class="icon">📏</span>
+                        </label>
+                        <input type="number" id="height"  placeholder="الطول" min="1">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="weight">
+                            الوزن (كيلوجرام)
+                            <span class="icon">⚖️</span>
+                        </label>
+                        <input type="number" id="weight"  placeholder="الوزن" min="1">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="gender">
+                            النوع
+                            <span class="icon">♀️♂️</span>
+                        </label>
+                        <div class="radio-group-container">
+                            <label class="radio-label">
+                                <input type="radio" name="gender" value="male" >
+                                ذكر
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="gender" value="female">
+                                أنثى
+                            </label>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="age">
+                                السن
+                                <span class="icon">📅</span>
+                            </label>
+                            <input type="number" id="age"  placeholder="السن" min="1">
+                        </div>
+                    </div>
+
+                    <button class="calculate-btn">
+                        احسب مؤشر كتلة الجسم
+                        <span class="icon">📄</span>
+                    </button>
+
+                    <div class="result-box">
+                        <div class="result-title">النتيجة</div>
+                        <div class="result-value">--</div>
+                        <div class="bmi-label">مؤشر كتلة الجسم</div>
+                        <button class="enter-data-btn">أدخل البيانات للحصول على النتيجة</button>
+                    </div>
+
+                    <div class="bmi-categories">
+                        <div class="category category-underweight">
+                            <div class="cat-label">نقص الوزن</div>
+                            <div class="cat-range">أقل من 18.5</div>
+                        </div>
+                        <div class="category category-normal">
+                            <div class="cat-label">وزن طبيعي</div>
+                            <div class="cat-range">18.5 - 24.9</div>
+                        </div>
+                        <div class="category category-overweight">
+                            <div class="cat-label">زيادة في الوزن</div>
+                            <div class="cat-range">25 - 29.9</div>
+                        </div>
+                        <div class="category category-obese">
+                            <div class="cat-label">سمنة</div>
+                            <div class="cat-range">30 أو أكثر</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- bmi end -->
+        <script src="js/main.js"></script>
+
 </body>
 
 </html>

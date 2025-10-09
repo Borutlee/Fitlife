@@ -28,6 +28,9 @@ let workout = document.querySelector('.workout');
 let workouttext = document.querySelector('.workout .intro .text');
 let workoutimage = document.querySelector('.workout .intro .image');
 
+let inputs = document.querySelectorAll('.input-group input');
+let bmibtn = document.querySelector('.calculate-btn');
+
 window.addEventListener("scroll", function () {
     if (window.scrollY >= benefits.offsetTop - 200) {
         container.style.transition = 'opacity 0.5s ease-in, transform 0.5s ease-in';
@@ -138,20 +141,20 @@ function switchbtn() {
                 }
             ]
         }
-    };    
+    };
     // 2. تعريف دالة التحميل المسبق (Preloading Function)
-    function preloading(infodata){
+    function preloading(infodata) {
         let allimagesrc = [];
 
         // جمع كل مسارات الصور من الأوبجيكت
-        for (const type in infodata){
-            if (infodata.hasOwnProperty(type)){
+        for (const type in infodata) {
+            if (infodata.hasOwnProperty(type)) {
                 infodata[type].exercises.forEach(exercise => {
                     allimagesrc.push(exercise.src);
                 })
             }
         }
-        
+
         // بدء التحميل في الخلفية باستخدام new Image()
         allimagesrc.forEach(src => {
             const img = new Image(); // ⬅️ تصحيح استخدام 'Image' بحرف 'I' كبير
@@ -207,5 +210,32 @@ function switchbtn() {
         });
     });
 }
+
 switchbtn();
+
+// Alert
+bmibtn.addEventListener('click', () => {
+    let empty = false;
+    inputs.forEach(input => {
+        if (input.value.trim() === '') {
+            empty = true;
+            input.style.borderColor = 'red';
+            setTimeout(() => {
+                input.style.borderColor = '#ccc';
+            }, 2000);
+        }
+    })
+    if (empty){
+        // toastify library
+        Toastify({
+            text: "برجاء ادخال البيانات",
+            duration: 3000,
+            gravity: "top", // أو "bottom"
+            position: "right", // أو "left"
+            backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
+        }).showToast();
+        return;            
+    }
+})
+
 
