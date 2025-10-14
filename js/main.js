@@ -31,6 +31,19 @@ let workoutimage = document.querySelector('.workout .intro .image');
 let inputs = document.querySelectorAll('.input-group input');
 let bmibtn = document.querySelector('.calculate-btn');
 
+
+const heightInput = document.getElementById('height');
+const weightInput = document.getElementById('weight');
+const ageInput = document.getElementById('age');
+const genderInputs = document.querySelectorAll('input[name="gender"]');
+const resultValue = document.querySelector('.result-value');
+const resultBox = document.querySelector('.result-box');
+const actionPlanContainer = document.querySelector('.action-plan-container');
+
+const API_URL = 'http://localhost:5000/api/fitlife/nodejs';
+
+
+
 window.addEventListener("scroll", function () {
     if (window.scrollY >= benefits.offsetTop - 200) {
         container.style.transition = 'opacity 0.5s ease-in, transform 0.5s ease-in';
@@ -236,6 +249,22 @@ bmibtn.addEventListener('click', () => {
         }).showToast();
         return;            
     }
+    calculatebmi();
 })
 
+function calculatebmi() {
+    if (weightInput.value > 0 && heightInput.value > 0){
+        resultValue.textContent = '';
+        let counter = 0;
+        let heightmeter = heightInput.value / 100;
+        let bmi = (weightInput.value / Math.pow(heightmeter, 2)).toFixed(1);
+        setInterval(() => {
+            if (counter <= bmi){
+                resultValue.textContent = counter;
+                counter++;
+            }
+        }, 1000);
+        console.log(bmi)
+    }
+}
 

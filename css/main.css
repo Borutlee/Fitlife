@@ -1228,56 +1228,81 @@ a {
 }
 
 /* --- BMI Categories Legend --- */
-.bmi-categories {
-    display: flex;
-    justify-content: space-between;
-    gap: 8px;
+/* --- تنسيقات خطة العمل (Action Plan) --- */
+.action-plan-container {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: #fcfcfc;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.action-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary-color, #1a1a2e); /* استخدام اللون الأساسي الداكن */
+    margin-bottom: 15px;
     text-align: center;
 }
 
-.category {
-    flex: 1;
-    padding: 10px 5px;
+.action-title .icon {
+    margin-left: 8px;
+    font-size: 20px;
+}
+
+/* تنسيق خطوات الخطة (Plan Steps) - نستخدم grid لترتيبها */
+.plan-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.plan-steps .plan-step {
+    padding: 15px;
     border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
     font-weight: 600;
-    color: white;
-    min-width: 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
 }
 
-.cat-label {
-    font-size: 13px;
-    margin-bottom: 3px;
-    font-weight: 600;
+.plan-steps .plan-step:hover {
+    transform: translateY(-3px);
 }
 
-.cat-range {
-    font-size: 11px;
-    font-weight: 400;
+.plan-steps .step-title {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
 }
 
-/* Specific Category Colors */
-.category-underweight {
-    background-color: #3498db;
-    /* Blue */
+.plan-steps .step-detail {
+    font-size: 16px;
+    color: #1a1a2e;
 }
 
-.category-normal {
-    background-color: #2ecc71;
-    /* Green */
+/* تنسيق الخطوات بناءً على اللون (لجعلها تبدو كـ "مربعات") */
+.plan-step:nth-child(1) {
+    background-color: #d4edda; /* أخضر فاتح */
+}
+.plan-step:nth-child(2) {
+    background-color: #fff3cd; /* أصفر فاتح */
+}
+.plan-step:nth-child(3) {
+    background-color: #d1ecf1; /* أزرق فاتح */
 }
 
-.category-overweight {
-    background-color: #f39c12;
-    /* Orange */
-}
-
-.category-obese {
-    background-color: #e74c3c;
-    /* Red */
-}
-
-/* --- Media Queries for Responsiveness --- */
+.placeholder-step {
+    grid-column: 1 / -1; /* تجعل العنصر يحتل كل المساحة */
+    text-align: center;
+    padding: 20px;
+    color: #888;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+}/* --- Media Queries for Responsiveness --- */
 @media (max-width: 480px) {
     .container {
         padding: 20px;
