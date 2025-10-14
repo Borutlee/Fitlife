@@ -263,9 +263,10 @@ function calculatebmi() {
                 resultValue.textContent = counter;
                 counter++;
             }
-        }, 500);
+        }, 50);
         console.log(bmi)
     }
 }
+
 
 
