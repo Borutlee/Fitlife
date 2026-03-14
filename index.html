@@ -40,25 +40,25 @@
             <div class="nav">
                 <ul>
                     <li>
-                        <a href="#">
+                        <a href="#home">
                             <i class="fa-solid fa-house"></i>
                             <span class="home">Home</span>
                         </a>
                     </li>
-                    <li><a href="#">
+                    <li><a href="#benefits">
                             <i class="fa-solid fa-heart-pulse"></i>
                             <span class="health">Benefits</span>
                         </a>
                     </li>
-                    <li><a href="#"><i class="fa-solid fa-apple-whole"></i>
+                    <li><a href="#nutrition"><i class="fa-solid fa-apple-whole"></i>
                             <span class="health">Nutrition</span>
                         </a>
                     </li>
-                    <li><a href="#"><i class="fa-solid fa-dumbbell"></i>
+                    <li><a href="#workout"><i class="fa-solid fa-dumbbell"></i>
                             <span class="work">Workout</span>
                         </a>
                     </li>
-                    <li><a href="#"><i class="fa-solid fa-weight-scale"></i>
+                    <li><a href="#bmi"><i class="fa-solid fa-weight-scale"></i>
                             <span class="bmi">BMI</span>
                         </a>
                     </li>
@@ -75,7 +75,7 @@
                 <p>اكتشف التوازن المثالي بين التمرين والتغذية للوصول لهدفك</p>
             </div>
             <div class="btn">
-                <a href="#">
+                <a href="#benefits">
                     <i class="fa-solid fa-angles-down"></i>
                 </a>
             </div>
@@ -84,7 +84,7 @@
     <!-- landing end -->
 
     <!-- benefits start -->
-    <div class="benefits">
+    <div class="benefits" id="benefits">
         <div class="heading">
             <h1>فوائد الرياضة للصحة</h1>
         </div>
@@ -124,7 +124,7 @@
     <!-- benefits end -->
 
     <!-- nutrition start -->
-    <div class="nutrition">
+    <div class="nutrition" id="nutrition">
         <div class="heading">
             <h1>التغذية الصحية</h1>
         </div>
@@ -303,7 +303,7 @@
     </div>
     <!-- nutrition end -->
     <!-- workout start -->
-    <div class="workout">
+    <div class="workout" id="workout">
         <div class="heading">
             <h1>التمارين الرياضية</h1>
         </div>
@@ -410,29 +410,39 @@
             <h1>حساب مؤشر كتلة الجسم</h1>
         </div>
         <div class="container">
-            <p></p>
             <div class="bmi-calculator-container">
-                <div class="input-grid">
+
+                <!-- inputs -->
+                <div class="bmi-inputs">
+
                     <div class="input-group">
                         <label for="height">
+                            <i class="fa-solid fa-ruler-vertical"></i>
                             الطول (سنتميتر)
-                            <span class="icon">📏</span>
                         </label>
-                        <input type="number" id="height" placeholder="الطول" min="1">
+                        <input type="number" id="height" placeholder="مثال: 175" min="1">
                     </div>
 
                     <div class="input-group">
                         <label for="weight">
+                            <i class="fa-solid fa-weight-scale"></i>
                             الوزن (كيلوجرام)
-                            <span class="icon">⚖️</span>
                         </label>
-                        <input type="number" id="weight" placeholder="الوزن" min="1">
+                        <input type="number" id="weight" placeholder="مثال: 70" min="1">
                     </div>
 
                     <div class="input-group">
-                        <label for="gender">
+                        <label for="age">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            السن
+                        </label>
+                        <input type="number" id="age" placeholder="مثال: 25" min="1">
+                    </div>
+
+                    <div class="input-group">
+                        <label>
+                            <i class="fa-solid fa-venus-mars"></i>
                             النوع
-                            <span class="icon">♀️♂️</span>
                         </label>
                         <div class="radio-group-container">
                             <label class="radio-label">
@@ -444,43 +454,28 @@
                                 أنثى
                             </label>
                         </div>
-
-                        <div class="input-group">
-                            <label for="age">
-                                السن
-                                <span class="icon">📅</span>
-                            </label>
-                            <input type="number" id="age" placeholder="السن" min="1">
-                        </div>
                     </div>
 
-                    <button class="calculate-btn">
-                        احسب مؤشر كتلة الجسم
-                        <span class="icon">📄</span>
-                    </button>
-
-                    <div class="result-box">
-                        <div class="result-title">النتيجة</div>
-                        <div class="result-value">--</div>
-                        <div class="bmi-label">مؤشر كتلة الجسم</div>
-                        <button class="enter-data-btn">أدخل البيانات للحصول على النتيجة</button>
-                    </div>
-
-                    <div class="action-plan-container">
-                        <div class="action-title">
-                            <span class="icon">💡</span>عرض خطة العمل المقترحة 
-                        </div>
-
-                        <!-- <div class="plan-steps" id="planSteps">
-                            <div class="placeholder-step">أدخل بياناتك لعرض خطة عملك الفورية</div>
-                        </div> -->
-
-                    </div>
                 </div>
+
+                <!-- button -->
+                <button class="calculate-btn">
+                    <i class="fa-solid fa-calculator"></i>
+                    احسب مؤشر كتلة الجسم
+                </button>
+
+                <!-- result -->
+                <div class="result-box">
+                    <div class="result-title">مؤشر كتلة الجسم</div>
+                    <div class="result-value">--</div>
+                    <button class="enter-data-btn">أدخل البيانات للحصول على النتيجة</button>
+                </div>
+
             </div>
         </div>
-        <!-- bmi end -->
-        <script src="js/main.js"></script>
+    </div>
+    <!-- bmi end -->
+    <script src="js/main.js"></script>
 
 </body>
 
